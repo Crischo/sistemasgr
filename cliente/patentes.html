@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+            <title>Patentes</title>
+            <meta charset="utf-8">
+            <link rel="stylesheet" href="../extras/bootstrap-4.1.0-dist/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+            <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+            <script src="../extras/bootstrap-4.1.0-dist/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+            <script src="../extras/js/jquery.min.js"></script>
+            
+            <link rel="stylesheet" href="../extras/kendoui.for.jquery.2018.1.221.trial/styles/kendo.common-material.min.css" />
+            <link rel="stylesheet" href="../extras/kendoui.for.jquery.2018.1.221.trial/styles/kendo.material.min.css" />
+            <link rel="stylesheet" href="../extras/kendoui.for.jquery.2018.1.221.trial/styles/kendo.material.mobile.min.css" />
+            <script src="../extras/kendo/js/kendo.all.min.js"></script>
+         <script src="../extras/kendoui.for.jquery.2018.1.221.trial/js/kendo.all.min.js"></script>
+        </head>
+        <body  background="../extras/images/inde/fondo3.png">
+            <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+            <script src="http://cdnjs.cloudflare.com/ajax/libs/jszip/2.4.0/jszip.js"></script>
+            <script src="http://kendo.cdn.telerik.com/2018.1.221/js/kendo.all.min.js"></script>
+    
+                       </form>
+
+        <div class="container">
+                
+            <div class="col-12">
+
+<br>
+                    <center><input type="date" name="nombredelacaja1" id="fech1" />
+                    <input type="date" name="nombredelacaja2" id="fech2" />
+                    <button onclick="createChart()" class="btn btn-primary">Fechas</button> </center>
+                
+
+
+                <h3 class="text-center">Búsqueda de Patentes</h3>
+            </div>
+            <div class="col-12 text-center">
+                <div id="grid"></div>
+            </div>
+           
+        </div>
+    </body>
+    <script>
+    function createChart() {
+        
+var ff1 = document.getElementById('fech1').value;
+var ff2 = document.getElementById('fech2').value;
+var ff3 = "&fin=";
+var urlf = "http://localhost/miconsulta/ws/patentes.php?inicio=";
+var res = urlf.concat(ff1, ff3, ff2);
+
+
+    $("#grid").kendoGrid({
+        dataSource: {
+      
+            type: "json",
+            transport: {
+                read: res
+            }
+          
+        },
+        
+        height: 475,
+        filterable: true,
+        toolbar: ['excel'],
+        excel: {
+          allPages: true,
+          fileName: "patentes.xlsx"
+        },
+        
+       
+        pageable: { refresh: true, pageSizes: true, },
+
+        columns: [{
+            field: 'fecha_presentacion',
+            title: "FechaPresentación"
+        }, {
+            field: 'numero_tramite_patente',
+            title: "NúmeroTramiteP"
+        },
+        {
+            field: 'numero_expediente_patente',
+            title: "NúmeroExpedienteP"
+        },
+        {
+            field: 'titulo',
+            title: "Título"
+        },
+        {
+            field: 'nombre',
+            title: "Nombre"
+        },
+        {
+            field: 'nombre_persona',
+            title: "NombrePersona"
+        },
+        {
+            field: 'nombre_pais',
+            title: "NombrePaís"
+        },
+        {
+            field: 'estado',
+            title: "Estado"
+        },]
+    });
+
+    
+}
+
+
+
+    </script>
+</html>

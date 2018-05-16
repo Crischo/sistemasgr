@@ -1,0 +1,52 @@
+
+
+.contenedor {
+	
+	display: flex;
+	width: 800px;
+	height: 40px;
+	color: #D0D0D0 ;
+	font-size: 45px;
+	line-height: 40px;
+	
+	position: relative;
+	top: 50;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	margin: auto;
+	overflow: hidden;
+	font-weight:bold;
+
+	
+}
+
+ul {
+	list-style: none;
+	padding-left: 10px;
+	animation: cambiar 7s infinite;
+	color: black;
+}
+
+ul, p {
+	margin: 0;
+	color: black;
+	
+}
+
+@keyframes cambiar {
+	
+	0%{ margin-top: 0;}
+	20%{ margin-top: 0;}
+	
+	25% {margin-top: -40px;}
+	50% {margin-top: -40px;}
+	
+	55% {margin-top: -80px;}
+	80% {margin-top: -80px;}
+	
+	85% {margin-top: -40px;}
+	95% {margin-top: -40px;}
+	
+	100% {margin-top: 0;}
+}

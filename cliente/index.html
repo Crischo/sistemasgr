@@ -1,0 +1,119 @@
+ <!-- <!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Ingreso</title>
+  <style type="text/css" rel="stylesheet">
+    html,body{width:100%;height:100%;margin:0;padding:0;font-family:"lucida grande", "lucida sans unicode", lucida, helvetica, "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;}
+    .header{height:40px;width:100%;background-color:#242424;position:fixed;}
+    .header_title{line-height:40px;margin-left:60px;color:#fff;font-size:15px;}
+    .header_user{font-size:12px;margin-left:20px;color:#ccc;}
+    .panel{width:380px;height:500px;margin-left:auto;margin-right:auto;padding-top:100px;font-size:14px;}
+    a{text-decoration: none;color:#fff;}
+    .login_input>span{display: inline-block;width:50px;}
+
+
+    input{height:28px;line-height:28px;width:300px;border:1px solid #ddd; border-radius:4px;margin-left:15px;margin-bottom:10px;outline: none;padding-left:10px;}
+  </style>
+</head>
+<body>
+
+
+
+<div class="panel">
+  <div class="login_input">
+ <img src="https://minka.gob.ec/uploads/-/system/appearance/header_logo/1/iepi.png" align="center"> 
+
+  <br>
+    <span>Usuario</span>
+    <input id="username" placeholder="Ingrese el usuario"/>
+  </div>
+  <div class="login_input">
+    <span>Contraseña</span>
+    <input id="password" type="password" placeholder="Ingrese su contraseña">
+  </div>
+  <div id="btn" onclick="entrar()" style="background-color:#3C74F2;width:240px;height:32px;line-height:32px;text-align: center;color:#fff;border-radius:4px;margin-top:30px;margin-left:60px;"/>
+    ingresar
+  </div>
+</div>
+
+
+
+<script type="text/javascript">
+function entrar(){
+   var usu=document.getElementById("username").value;
+   var contra=document.getElementById("password").value;
+if(usu=="admin"&&contra=="admin"){
+ // window.open("areas", "Diseño Web", "width=1200, height=800");
+location.href = "../cliente/areas.html";
+ 
+}else {
+ alert("Usuario o Contraseña incorrectos!");
+}
+
+} 
+
+
+</script>
+</body>
+</html> -->
+
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
+<!--<script type="text/javascript" src="script.js"></script> -->
+<link rel="stylesheet" type="text/css" href="style.css">
+
+
+<!------ Include the above in your HEAD tag ---------->
+
+<!--
+    you can substitue the span of reauth email for a input with the email and
+    include the remember me checkbox
+    -->
+    <div class="container">
+        <div class="card card-container">
+            <!-- <img class="profile-img-card" src="//lh3.googleusercontent.com/-6V8xOA6M7BA/AAAAAAAAAAI/AAAAAAAAAAA/rzlHcD0KYwo/photo.jpg?sz=120" alt="" /> -->
+            <center><img   src="../extras/images/inde/logo.png"  width="250" height="250"/></center>
+            <p id="profile-name" class="profile-name-card"></p>
+            <form >
+                <span></span>
+                <center><input type="email" id="username"  placeholder="Username" required autofocus></center>
+<br>
+
+
+               <center> <input type="password" id="password"  placeholder="Password" required></center>
+                <div id="remember" class="checkbox">
+                   
+                </div>
+<br>
+                <center><button  onclick="entrar()" class="btn btn-lg btn-primary" type="submit">Ingresar</button></center>
+            </form><!-- /form -->
+            
+        </div><!-- /card-container -->
+    </div><!-- /container -->
+
+<script type="text/javascript">
+function entrar(){
+   var usu=document.getElementById("username").value;
+   var contra=document.getElementById("password").value;
+if(usu=="admin"&&contra=="admin"){
+ // window.open("areas", "Diseño Web", "width=1200, height=800");
+location.href = "../cliente/areas.html";
+ 
+}else {
+ alert("Usuario o Contraseña incorrectos!");
+}
+
+} 
+
+
+</script>
+
+
+
+
+
+
+
